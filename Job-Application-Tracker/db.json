@@ -1,113 +1,130 @@
 {
-    "currentApplications": [
-        {
-            "id":1,
-            "date":"2022-05-21",
-            "name": "Alejandra Guzman",
-            "position":"Bookkeeper",
-            "department":"Accounting",
-            "status":"First Interview",
-            "Resume":"this is my resume"
-        },
-        {
-            "id":2,
-            "date":"2022-02-12",
-            "name": "Julieta Venegas",
-            "position":"Front-end Engineer",
-            "department":"Engineering",
-            "status":"Phone Screening",
-            "Resume":"this is my resume"
-            
-        },
-        {
-            "id":3,
-            "date":"2022-03-20",
-            "name": "Diego Marquez",
-            "position":"Administrative Assistant",
-            "department":"Admin",
-            "status":"Read",
-            "Resume":"this is my resume"
-        },
-        {
-            "id":4,
-            "date":"2022-03-21",
-            "name": "Janeth Escorza",
-            "position":"Data Analyst",
-            "department":"Engineering",
-            "status":"First interview",
-            "Resume":"this is my resume"
-        },
-        {
-            "id":5,
-            "date":"2022-06-13",
-            "name": "Nichele Romick",
-            "position":"Assistant Accountant",
-            "department":"Accounting",
-            "status":"Offer Sent",
-            "Resume":"this is my resume"
-        },
-        {
-            "id":6,
-            "date":"2022-08-20",
-            "name": "Jesus Moreno",
-            "position":"Markerting Manager",
-            "department":"Marketing",
-            "status":"Second Interview",
-            "Resume":"this is my resume"
-        },
-        {
-            "id":7,
-            "date":"2022-06-21",
-            "name": "Angelina Diaz",
-            "position":"Markerting Manager",
-            "department":"Marketing",
-            "status":"Unread",
-            "Resume":"this is my resume"
-        },
-        {
-            "id":8,
-            "date":"2022-04-17",
-            "name": "Jhon Doe",
-            "position":"Administrative Assistant",
-            "department":"Admin",
-            "status":"Read",
-            "Resume":"this is my resume"
-        },
-        {
-            "id":9,
-            "date":"2022-07-27",
-            "name": "Stephan Martinez",
-            "position":"Sales Producer",
-            "department":"Sales",
-            "status":"First Interview",
-            "Resume":"this is my resume"
-        },
-        {
-            "id":10,
-            "date":"2022-08-09",
-            "name": "Angelo Trujillo",
-            "position":"Sales Producer",
-            "department":"Sales",
-            "status":"Read",
-            "Resume":"this is my resume"
-        },
-        {
-            "id":11,
-            "date":"2022-09-16",
-            "name": "Paulina Rubio",
-            "position":"Head Accountant",
-            "department":"Accounting",
-            "status":"Offer Sent",
-            "Resume":"this is my resume"
-        },
-        {
-          "id":12,
-          "date":"2022-07-19",
-          "name":"Brenda Lopez",
-          "position":"Data Analyst",
-          "department":"Engineering",
-          "status":"Second Interview",
-          "resume":"this is my resume"
-        }
-    ]
-  }
+  "currentApplications": [
+    {
+      "id": 1,
+      "date": "2022-05-21",
+      "name": "Alejandra Guzman",
+      "position": "Bookkeeper",
+      "department": "Accounting",
+      "status": "First Interview",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 2,
+      "date": "2022-02-12",
+      "name": "Julieta Venegas",
+      "position": "Front-end Engineer",
+      "department": "Engineering",
+      "status": "Phone Screening",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 3,
+      "date": "2022-03-20",
+      "name": "Diego Marquez",
+      "position": "Administrative Assistant",
+      "department": "Admin",
+      "status": "Read",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 4,
+      "date": "2022-03-21",
+      "name": "Janeth Escorza",
+      "position": "Data Analyst",
+      "department": "Engineering",
+      "status": "First interview",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 5,
+      "date": "2022-06-13",
+      "name": "Nichele Romick",
+      "position": "Assistant Accountant",
+      "department": "Accounting",
+      "status": "Offer Sent",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 6,
+      "date": "2022-08-20",
+      "name": "Jesus Quintana",
+      "position": "Markerting Manager",
+      "department": "Marketing",
+      "status": "Second Interview",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 7,
+      "date": "2022-06-21",
+      "name": "Angelina Diaz",
+      "position": "Markerting Manager",
+      "department": "Marketing",
+      "status": "Unread",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 8,
+      "date": "2022-04-17",
+      "name": "Jhon Doe",
+      "position": "Administrative Assistant",
+      "department": "Admin",
+      "status": "Read",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 9,
+      "date": "2022-07-27",
+      "name": "Stephan Martinez",
+      "position": "Sales Producer",
+      "department": "Sales",
+      "status": "First Interview",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 10,
+      "date": "2022-08-09",
+      "name": "Angelo Trujillo",
+      "position": "Sales Producer",
+      "department": "Sales",
+      "status": "Read",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 11,
+      "date": "2022-09-16",
+      "name": "Paulina Rubio",
+      "position": "Head Accountant",
+      "department": "Accounting",
+      "status": "Offer Sent",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "id": 12,
+      "date": "2022-07-19",
+      "name": "Brenda Lopez",
+      "position": "Data Analyst",
+      "department": "Engineering",
+      "status": "Second Interview",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
+    },
+    {
+      "date": "2022-11-09",
+      "name": "Wednesday Adams",
+      "position": "Data Analyst ",
+      "department": "Engineering ",
+      "status": "Offer Sent",
+      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png",
+      "id": 13
+    },
+    {
+      "date": "",
+      "name": "",
+      "position": "",
+      "department": "",
+      "status": "",
+      "resume": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png",
+      "id": 14
+    }
+  ]
+}
