@@ -4,18 +4,23 @@ import Applications from "./Applications"
 
 
 
-function ApplicationList({applications, enterApplicationEditModeFor}){
-    
+function ApplicationList({applications, onApplicationDelete, setSearchQuery }){
+     
     
     const mappedApplication = applications.map(oneApplication => {
         return <Applications key={oneApplication.id} 
-        applications={oneApplication} 
-        enterApplicationEditModeFor={enterApplicationEditModeFor}  />
+        applications={oneApplication}
+        onApplicationDelete={onApplicationDelete}  />
     })
-console.log(enterApplicationEditModeFor)
+    
+    function handleChange(event){
+        console.log(event.target.value)
+        setSearchQuery(event.target.value)
+    }
 
     return(
         <div>
+            <input type="text" placeholder="Search..." onChange={handleChange} />
         <table className="ui celled striped padded table">
         <tbody>
           <tr>

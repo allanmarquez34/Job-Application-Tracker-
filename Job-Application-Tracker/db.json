@@ -98,33 +98,6 @@
       "department": "Accounting",
       "status": "Offer Sent",
       "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
-    },
-    {
-      "id": 12,
-      "date": "2022-07-19",
-      "name": "Brenda Lopez",
-      "position": "Data Analyst",
-      "department": "Engineering",
-      "status": "Second Interview",
-      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
-    },
-    {
-      "date": "2022-11-09",
-      "name": "Wednesday Adams",
-      "position": "Data Analyst ",
-      "department": "Engineering ",
-      "status": "Offer Sent",
-      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png",
-      "id": 13
-    },
-    {
-      "date": "",
-      "name": "",
-      "position": "",
-      "department": "",
-      "status": "",
-      "resume": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png",
-      "id": 14
     }
   ]
 }

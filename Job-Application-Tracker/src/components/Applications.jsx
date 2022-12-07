@@ -1,23 +1,32 @@
 import React from "react"
 
-function Application({applications,enterApplicationEditModeFor}){
+function Application({applications, onApplicationDelete}){
+    const { id, date, name, position , department, status, link } = applications;
 
-    const handleEditClick = () => {
-        enterApplicationEditModeFor(applications.id);
+    const handleDeleteClick = () => {
+        onApplicationDelete(id)
+        fetch(`http://localhost:3000/currentApplications/${id}`, {
+          method: "DELETE"
+        })
       };
    
       
     return(
         <tr>
-            <td>{applications.date}</td>
-            <td>{applications.name}</td>
-            <td>{applications.position}</td>
-            <td>{applications.department}</td>
-            <td>{applications.status}</td>
-            <td>{applications.link}</td>
+            <td>{date}</td>
+            <td>{name}</td>
+            <td>{position}</td>
+            <td>{department}</td>
+            <td>{status}</td>
+            <td>{link}</td>
             <td>
-            <button type="button" className="btn btn-primary" onClick={handleEditClick} >
+            <button type="button" className="btn btn-primary"  >
           Edit Application
+        </button>
+        </td>
+        <td>
+            <button type="button" className="btn btn-primary" onClick={handleDeleteClick}  >
+          No longer Intrested
         </button>
         </td>
         </tr>
