@@ -4,11 +4,12 @@ import Applications from "./Applications"
 
 
 
-function ApplicationList({applications, onApplicationDelete, setSearchQuery }){
+function ApplicationList({applications, onApplicationDelete, setSearchQuery, setSelectedDepartment }){
      
     
     const mappedApplication = applications.map(oneApplication => {
-        return <Applications key={oneApplication.id} 
+        return <Applications 
+        key={oneApplication.id} 
         applications={oneApplication}
         onApplicationDelete={onApplicationDelete}  />
     })
@@ -20,7 +21,17 @@ function ApplicationList({applications, onApplicationDelete, setSearchQuery }){
 
     return(
         <div>
+            <h3>Search Position</h3>
             <input type="text" placeholder="Search..." onChange={handleChange} />
+            <div>
+                <h3>Select Department</h3>
+                <button>Engineering</button>
+                <button>Marketing</button>
+                <button>Sales</button>
+                <button>Accounting</button>
+                <button>Admin</button>
+                <button>Legal</button>
+            </div>
         <table className="ui celled striped padded table">
         <tbody>
           <tr>

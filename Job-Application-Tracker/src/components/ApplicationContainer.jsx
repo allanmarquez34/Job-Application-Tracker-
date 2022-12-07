@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react'
+import { Switch, Route } from "react-router-dom";
 import AddApplicationForm from "./AddApplicationForm";
 import ApplicationList from "./ApplicationList";
+// import Home from "./Home"
 
 
 
 function ApplicationContainer(){
     const [applications, setApplications]=useState([])
     const [searchQuery, setSearchQuery]=useState("")
+    const [selectedDepartment, setSelectedDepartment] = useState("");
   
  
     
@@ -37,16 +40,22 @@ function ApplicationContainer(){
 
      
 
-   
-
-   
 
     return (
-        <div>
-            
-            <ApplicationList applications={filteredApplication} onApplicationDelete={onApplicationDelete} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
+        <>
+        <Switch>
+            <Route path="/applications">
+            <ApplicationList applications={filteredApplication}
+             onApplicationDelete={onApplicationDelete}
+              setSelectedDepartment={setSelectedDepartment}
+               setSearchQuery={setSearchQuery}
+               />
+            </Route>
+            <Route path="/application/new">
             <AddApplicationForm onAddApplication={handleAddApplication}/>
-        </div>
+            </Route>
+        </Switch>
+        </>
     )
 
 }
