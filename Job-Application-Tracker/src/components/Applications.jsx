@@ -1,6 +1,7 @@
 import React from "react"
+import { Link } from "react-router-dom";
 
-function Application({applications, onApplicationDelete, }){
+function Application({applications, onApplicationDelete, enterApplicationEditModeFor}){
     const { id, date, name, position , department, status, link } = applications;
 
     const handleDeleteClick = () => {
@@ -11,7 +12,7 @@ function Application({applications, onApplicationDelete, }){
       };
 
       const handleEditClick = () => {
-        enterApplicationModeFor(applications);
+        enterApplicationEditModeFor(id);
       };
    
       
@@ -24,9 +25,11 @@ function Application({applications, onApplicationDelete, }){
             <td>{status}</td>
             <td>{link}</td>
             <td>
+            <Link to={`applications/${id}/edit`} > 
             <button type="button" className="btn btn-primary" onClick={handleEditClick}>
           Edit Application
         </button>
+        </Link>
         </td>
         <td>
             <button type="button" className="btn btn-primary" onClick={handleDeleteClick}  >

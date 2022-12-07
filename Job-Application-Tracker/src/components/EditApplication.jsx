@@ -9,6 +9,7 @@ const initialState = {
   status: "",
   link: "",
 };
+
 const EditApplication = ({ onUpdateApplication }) => {
   const [formData, setFormData] = useState(initialState);
 
@@ -42,8 +43,8 @@ const EditApplication = ({ onUpdateApplication }) => {
 
     fetch(`http://localhost:3000/currentApplications/${id}`, configObj)
       .then((r) => r.json())
-      .then((updatedApp) => {
-        onUpdateApplication(updatedApp);
+      .then((updatedApplication) => {
+        onUpdateApplication(updatedApplication);
         history.push("/applications")
       });
   };
