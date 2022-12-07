@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import {  useHistory } from "react-router-dom";
 
 function AddApplicationForm({onAddApplication}){
     
@@ -10,6 +11,8 @@ function AddApplicationForm({onAddApplication}){
         status:"",
         link:""
     })
+
+    const history = useHistory()
 
     function handleChange(event) {
         setFormData({
@@ -37,6 +40,7 @@ function AddApplicationForm({onAddApplication}){
         })
         .then((r) => r.json())
         .then(onAddApplication)
+        history.push("/applications")
     }
 
 

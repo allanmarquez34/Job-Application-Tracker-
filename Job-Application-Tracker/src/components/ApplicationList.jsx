@@ -4,14 +4,15 @@ import Applications from "./Applications"
 
 
 
-function ApplicationList({applications, onApplicationDelete, setSearchQuery, setSelectedDepartment }){
+function ApplicationList({applications, onApplicationDelete, enterApplicationEditModeFor, setSearchQuery, setSelectedDepartment }){
      
     
     const mappedApplication = applications.map(oneApplication => {
         return <Applications 
         key={oneApplication.id} 
         applications={oneApplication}
-        onApplicationDelete={onApplicationDelete}  />
+        onApplicationDelete={onApplicationDelete}
+        enterApplicationEditModeFor={enterApplicationEditModeFor} />
     })
     
     function handleChange(event){

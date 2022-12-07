@@ -1,6 +1,6 @@
 import React from "react"
 
-function Application({applications, onApplicationDelete}){
+function Application({applications, onApplicationDelete, }){
     const { id, date, name, position , department, status, link } = applications;
 
     const handleDeleteClick = () => {
@@ -8,6 +8,10 @@ function Application({applications, onApplicationDelete}){
         fetch(`http://localhost:3000/currentApplications/${id}`, {
           method: "DELETE"
         })
+      };
+
+      const handleEditClick = () => {
+        enterApplicationModeFor(applications);
       };
    
       
@@ -20,7 +24,7 @@ function Application({applications, onApplicationDelete}){
             <td>{status}</td>
             <td>{link}</td>
             <td>
-            <button type="button" className="btn btn-primary"  >
+            <button type="button" className="btn btn-primary" onClick={handleEditClick}>
           Edit Application
         </button>
         </td>

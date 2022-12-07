@@ -7,18 +7,20 @@ function NavBar(){
         <header className="navigation">
         <h1 className="branding">
           <Link to="/">
-            <span className="logo"></span>
             Job Application Tracker
           </Link>
         </h1>
         <nav>
+          <NavLink className="button" exact to="/">
+            Home
+          </NavLink>
           <NavLink className="button" exact to="/applications">
             All Applications
           </NavLink>
-          <NavLink className="button" to="/application/new">
-            Add Application 
+          <NavLink className="button" exact to="/application/add">
+            Add Application
           </NavLink>
-          <button >dark mode</button>
+          <button>dark mode </button>
         </nav>
       </header>
 

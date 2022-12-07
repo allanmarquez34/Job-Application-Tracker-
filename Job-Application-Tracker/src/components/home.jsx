@@ -1,25 +1,36 @@
-// import React from "react"
-// import { Link } from "react-router-dom";
+import React,{ useEffect, useState } from "react"
+import { Link } from "react-router-dom";
+import Application from "./Applications";
 
 
-// const Home= () => {
 
-//     return(
-//     <section>
-//          <h2>Organize your buisness incoming job applications</h2>
-//       <p>
-//         Looking for someone to hire? Check out these awesome projects from
-//         Flatiron students.
-//       </p>
-//         <div>
-//         <Link className="button" to="/applications">
-//           View All Applcations
-//         </Link>
-//       </div>
-//       </section>
-//     )
-// }
+const Home = () => {
+    const [recentApplications, setRecentApplications] = useState([]);
+
+    useEffect(() => {
+        
+        fetch("http://localhost:3000/currentApplications?_sort=id&_order=desc&_limit=1")
+          .then((r) => r.json())
+          .then((recentApplications) => {
+            setRecentApplications(recentApplications);
+          });
+      }, []);
+
+    return(
+    <section>
+        <h3>Most Recent Application</h3>
+        {recentApplications.map((applications) => (
+        <p key={applications.id}>{applications.name}</p>
+      ))}
+
+         <h2>Organize your buisness incoming job applications</h2>
+         <Link className="button" to="/applications">
+          View All Applications
+        </Link>
+    </section>
+    )
+}
 
 
-// export default Home
+export default Home
 
