@@ -1,10 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import Applications from "./Applications"
+import Filter from "./Filter"
 
 
 
 
-function ApplicationList({applications, onApplicationDelete, enterApplicationEditModeFor, setSearchQuery, setSelectedDepartment }){
+function ApplicationList({applications,
+     onApplicationDelete,
+     onSelectApplication,
+     setSearchQuery,
+    }){
+        // const [selectedDepartment, setSelectedDepartment] = useState("All");
      
     
     const mappedApplication = applications.map(oneApplication => {
@@ -12,19 +18,31 @@ function ApplicationList({applications, onApplicationDelete, enterApplicationEdi
         key={oneApplication.id} 
         applications={oneApplication}
         onApplicationDelete={onApplicationDelete}
-        enterApplicationEditModeFor={enterApplicationEditModeFor} />
+        onSelectApplication={onSelectApplication}/>
+
     })
     
     function handleChange(event){
         console.log(event.target.value)
         setSearchQuery(event.target.value)
     }
+    function handleDepartmentChange(e){
+        setSelectedDepartment(e.target.value)
+    }
+    // const itemsToDisplay = applications.filter((application) => {
+    //     if (selectedDepartment === "All") return true;
+    
+    //     return application.department === selectedDepartment;
+    //   });
+    
 
     return(
         <div>
             <h3>Search Position</h3>
             <input type="text" placeholder="Search..." onChange={handleChange} />
-            <div>
+            <Filter onDepartmentChange={handleDepartmentChange}/>
+            
+            {/* <div>
                 <h3>Select Department</h3>
                 <button>Engineering</button>
                 <button>Marketing</button>
@@ -32,7 +50,7 @@ function ApplicationList({applications, onApplicationDelete, enterApplicationEdi
                 <button>Accounting</button>
                 <button>Admin</button>
                 <button>Legal</button>
-            </div>
+            </div> */}
         <table className="ui celled striped padded table">
         <tbody>
           <tr>

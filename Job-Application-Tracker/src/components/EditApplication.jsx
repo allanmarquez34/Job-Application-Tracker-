@@ -1,55 +1,32 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
-
-const initialState = {
-  date: "",
-  name: "",
-  position: "",
-  department: "",
-  status: "",
-  link: "",
-};
-
-const EditApplication = ({ onUpdateApplication }) => {
-  const [formData, setFormData] = useState(initialState);
-
-  const { date, name, position, department, status, link  } = formData;
-
-  const { id } = useParams();
-  const history = useHistory()
-  console.log('id', id)
+import React from "react"
+import {  useParams, useHistory } from "react-router-dom";
 
 
-  useEffect(() => {
-    fetch(`http://localhost:3000/currentApplications/${id}`)
-      .then((r) => r.json())
-      .then((data) => setFormData(data));
-  }, [id]);
+function EditAppication({applications, onChangeForm, onEditApplication}){
+    // const history = useHistory()
+    // const {id} = useParams()
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(formData => ({ ...formData, [name]: value }));
-  };
+    function handleChange(event) {
+        onChangeForm(event.target.name, event.target.value);
+      }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const configObj = {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData),
-    };
+      function handleSubmit(event) {
+        event.preventDefault();
+        fetch(` http://localhost:3000/currentApplications/${applications.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(applications),
+        },)
+          .then((r) => r.json())
+          .then(onEditApplication);
+        //   history.push("/applications")
+      }
 
-    fetch(`http://localhost:3000/currentApplications/${id}`, configObj)
-      .then((r) => r.json())
-      .then((updatedApplication) => {
-        onUpdateApplication(updatedApplication);
-        history.push("/applications")
-      });
-  };
+      if (!applications) return null;
 
-  return (
+      return(
     <form onSubmit={handleSubmit} className="form" autoComplete="off">
       <h3>Edit Project</h3>
 
@@ -58,7 +35,7 @@ const EditApplication = ({ onUpdateApplication }) => {
         type="text"
         id="date"
         name="date"
-        value={date}
+        value={applications.date}
         onChange={handleChange}
       />
 
@@ -67,7 +44,7 @@ const EditApplication = ({ onUpdateApplication }) => {
         type="text"
         id="name"
         name="name"
-        value={name}
+        value={applications.name}
         onChange={handleChange}
       />
 
@@ -76,7 +53,7 @@ const EditApplication = ({ onUpdateApplication }) => {
         type="text"
         id="position"
         name="position"
-        value={position}
+        value={applications.position}
         onChange={handleChange}
       />
 
@@ -84,7 +61,7 @@ const EditApplication = ({ onUpdateApplication }) => {
       <select
         name="department"
         id="deparment"
-        value={department}
+        value={applications.department}
         onChange={handleChange}
       >
      <option value="">Pick a Department</option>
@@ -101,7 +78,7 @@ const EditApplication = ({ onUpdateApplication }) => {
       <select
         name="status"
         id="status"
-        value={status}
+        value={applications.status}
         onChange={handleChange}
       >
     <option value="">Pick a Status</option>
@@ -118,13 +95,14 @@ const EditApplication = ({ onUpdateApplication }) => {
         type="link"
         id="link"
         name="link"
-        value={link}
+        value={applications.link}
         onChange={handleChange}
       />
 
       <button type="submit">Update Application</button>
     </form>
-  );
-};
+      )
+    
+}
 
-export default EditApplication;
+export default EditAppication

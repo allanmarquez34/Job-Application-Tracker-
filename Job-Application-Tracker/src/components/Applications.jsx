@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-function Application({applications, onApplicationDelete, enterApplicationEditModeFor}){
+function Application({applications, onApplicationDelete, onSelectApplication }){
     const { id, date, name, position , department, status, link } = applications;
 
     const handleDeleteClick = () => {
@@ -11,10 +11,9 @@ function Application({applications, onApplicationDelete, enterApplicationEditMod
         })
       };
 
-      const handleEditClick = () => {
-        enterApplicationEditModeFor(id);
-      };
-   
+      function handleClick() {
+        onSelectApplication(applications);
+      }
       
     return(
         <tr>
@@ -23,19 +22,28 @@ function Application({applications, onApplicationDelete, enterApplicationEditMod
             <td>{position}</td>
             <td>{department}</td>
             <td>{status}</td>
-            <td>{link}</td>
+            {link ? (
+                <td>
+                    <p>
+                        <a target="_blank" rel="noreferrer" href={link}>
+                            Resume
+                        </a>
+                    </p>
+                </td>
+            ) : null
+            }
             <td>
-            <Link to={`applications/${id}/edit`} > 
-            <button type="button" className="btn btn-primary" onClick={handleEditClick}>
-          Edit Application
-        </button>
-        </Link>
-        </td>
-        <td>
-            <button type="button" className="btn btn-primary" onClick={handleDeleteClick}  >
-          No longer Intrested
-        </button>
-        </td>
+                {/* <Link to={`/applications/${id}/edit`}> */}
+                    <button type="button" className="btn btn-primary" onClick={handleClick}>
+                        Edit Application
+                    </button>
+                    {/* </Link> */}
+            </td>
+            <td>
+                <button type="button" className="btn btn-primary" onClick={handleDeleteClick}  >
+                    No longer Intrested
+                </button>
+            </td>
         </tr>
     )
 

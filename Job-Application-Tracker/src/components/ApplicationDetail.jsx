@@ -13,7 +13,7 @@ function ApplicationDetail(){
           .then((application) => {
             setApplication(application);
           });
-      }, [id]);
+      }, [id]);re
 
       if(!application) { return <div></div>}
 
@@ -26,7 +26,13 @@ function ApplicationDetail(){
             <td>{position}</td>
             <td>{department}</td>
             <td>{status}</td>
-            <td>{link}</td>
+            <td>{link ? (
+            <p>
+              <a target="_blank" rel="noreferrer" href={link}>
+                Resume
+              </a>
+            </p>
+          ) : null}</td>
         </tr>
       )
 }

@@ -40,7 +40,7 @@ function AddApplicationForm({onAddApplication}){
         })
         .then((r) => r.json())
         .then(onAddApplication)
-        history.push("/applications")
+        history.push(`/applications`)
     }
 
 

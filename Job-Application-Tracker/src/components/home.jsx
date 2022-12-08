@@ -18,9 +18,28 @@ const Home = () => {
 
     return(
     <section>
-        <h3>Most Recent Application</h3>
+        <h2>Most Recent Application</h2>
         {recentApplications.map((applications) => (
-        <p key={applications.id}>{applications.name}</p>
+        <div key={applications.id}>
+        <h3>Date</h3>
+        {applications.date}
+        <h3>Name</h3>
+        {applications.name}, 
+        <h3>position</h3>
+        {applications.position}, 
+        <h3>Department</h3>
+        {applications.department}, 
+        <h3>Status</h3>
+        {applications.status},
+        {applications.link ? (
+                
+            <p>
+              <a target="_blank" rel="noreferrer" href={applications.link}>
+                Resume
+              </a>
+            </p>
+            
+          ) : null} </div>
       ))}
 
          <h2>Organize your buisness incoming job applications</h2>
