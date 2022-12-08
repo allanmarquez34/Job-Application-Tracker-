@@ -4,15 +4,15 @@ import Home from "./components/Home"
 import AddApplicationForm from "./components/AddApplicationForm";
 import ApplicationList from "./components/ApplicationList";
 import EditApplication from "./components/EditApplication";
-import { BrowserRouter, Switch, Route } from "react-router-dom"
+import { BrowserRouter, Switch, Route, useParams} from "react-router-dom"
 
 
 
 function App(){
     const [applications, setApplications]=useState([])
     const [searchQuery, setSearchQuery]=useState("")
-
     const [selectedApplication, setSelectedApplication] = useState(null)
+    const [selectedDepartment, setSelectedDepartment] = useState("All");
     
     function handleChangeForm(name, value) {
         setSelectedApplication({
@@ -33,14 +33,22 @@ function App(){
         setApplications([...applications, newApplication])
     }
 
-    const filteredApplication = applications.filter(oneApplication => {
-        return oneApplication.position.toLowerCase().includes(searchQuery.toLowerCase())
-    })
-
     const onApplicationDelete = (applicationId) => {
         setApplications(applications => applications.filter(a => a.id !== applicationId))
       };
 
+      const itemsToDisplay = applications
+  
+      .filter(
+        (application) => selectedDepartment === "All" || application.department === selectedDepartment
+      )
+      
+      .filter((application) => application.position.toLowerCase().includes(searchQuery.toLowerCase()));
+      
+
+      function handleDepartmentChange(e){
+        setSelectedDepartment(e.target.value)
+     }
 
     useEffect(() => {
         fetch("http://localhost:3000/currentApplications")
@@ -53,17 +61,11 @@ function App(){
 
 return(
 
-     <div>
+     <div className= "background">
      <BrowserRouter>
 
         <NavBar />
-        <EditApplication
-            applications={selectedApplication}
-            onChangeForm={handleChangeForm}
-            onEditApplication={handleEditApplication}
-                />
-
-
+        
 
         <Switch>
             <Route exact path ="/">
@@ -76,20 +78,26 @@ return(
 
             <Route path = "/applications">
                 <ApplicationList 
-                applications={filteredApplication}
+                applications={itemsToDisplay}
                 onApplicationDelete={onApplicationDelete}
                 onSelectApplication={setSelectedApplication}
                 setSearchQuery={setSearchQuery}
-
+                onDepartmentChange={handleDepartmentChange}/>
                 
-                />
+                
             </Route>
 
-        <Route exact path="applications/:id/edit">
+            <Route path="/:id/edit">
+                <EditApplication
+                    applications={selectedApplication}
+                    onChangeForm={handleChangeForm}
+                    onEditApplication={handleEditApplication}
+                        />
 
-        </Route>
+
+            </Route>
         
-
+                
    
             
         </Switch>

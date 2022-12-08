@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Application({applications, onApplicationDelete, onSelectApplication }){
     const { id, date, name, position , department, status, link } = applications;
@@ -33,11 +33,11 @@ function Application({applications, onApplicationDelete, onSelectApplication }){
             ) : null
             }
             <td>
-                {/* <Link to={`/applications/${id}/edit`}> */}
+                <NavLink exact to={`/${id}/edit`}>
                     <button type="button" className="btn btn-primary" onClick={handleClick}>
                         Edit Application
                     </button>
-                    {/* </Link> */}
+                </NavLink>
             </td>
             <td>
                 <button type="button" className="btn btn-primary" onClick={handleDeleteClick}  >

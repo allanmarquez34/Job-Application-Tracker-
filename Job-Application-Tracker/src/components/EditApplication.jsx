@@ -3,8 +3,10 @@ import {  useParams, useHistory } from "react-router-dom";
 
 
 function EditAppication({applications, onChangeForm, onEditApplication}){
-    // const history = useHistory()
-    // const {id} = useParams()
+    const history = useHistory()
+    const {id} = useParams()
+   
+    
 
     function handleChange(event) {
         onChangeForm(event.target.name, event.target.value);
@@ -12,7 +14,7 @@ function EditAppication({applications, onChangeForm, onEditApplication}){
 
       function handleSubmit(event) {
         event.preventDefault();
-        fetch(` http://localhost:3000/currentApplications/${applications.id}`, {
+        fetch(` http://localhost:3000/currentApplications/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -21,7 +23,7 @@ function EditAppication({applications, onChangeForm, onEditApplication}){
         },)
           .then((r) => r.json())
           .then(onEditApplication);
-        //   history.push("/applications")
+          history.push("/applications")
       }
 
       if (!applications) return null;
