@@ -16,16 +16,17 @@ function Application({applications, onApplicationDelete, onSelectApplication }){
       }
       
     return(
-        <tr>
-            <td>{date}</td>
-            <td>{name}</td>
-            <td>{position}</td>
-            <td>{department}</td>
-            <td>{status}</td>
+        
+        <tr className ="table-row">
+            <td className="col col-1">{date}</td>
+            <td className="col col-2">{name}</td>
+            <td className="col col-3">{position}</td>
+            <td className="col col-4">{department}</td>
+            <td className="col col-5">{status}</td>
             {link ? (
-                <td>
+                <td className="col col-6">
                     <p>
-                        <a target="_blank" rel="noreferrer" href={link}>
+                        <a className="resume"target="_blank" rel="noreferrer" href={link}>
                             Resume
                         </a>
                     </p>
@@ -34,17 +35,19 @@ function Application({applications, onApplicationDelete, onSelectApplication }){
             }
             <td>
                 <NavLink exact to={`/${id}/edit`}>
-                    <button type="button" className="btn btn-primary" onClick={handleClick}>
+                    <button type="button" className="button-1" onClick={handleClick}>
                         Edit Application
                     </button>
                 </NavLink>
             </td>
             <td>
-                <button type="button" className="btn btn-primary" onClick={handleDeleteClick}  >
+                <button type="button" className="button-1" onClick={handleDeleteClick}  >
                     No longer Intrested
                 </button>
             </td>
         </tr>
+        
+        
     )
 
 }

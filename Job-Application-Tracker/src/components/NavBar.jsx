@@ -1,20 +1,18 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 function NavBar(){
 
     return(
         <header className="navigation">
-        <h1 className="branding">
-          <Link to="/" className ="title">
+         <nav>
+          <NavLink to="/" className ="title">
             Job Application Tracker
-          </Link>
-        </h1>
-        <nav>
-          <NavLink className="button" exact to="/applications">
+          </NavLink>
+          <NavLink className="button-all-applications" exact to="/applications">
             All Applications
           </NavLink>
-          <NavLink className="button" exact to="/application/add">
+          <NavLink className="button-add-applications" exact to="/application/add">
             Add Application
           </NavLink>
         </nav>

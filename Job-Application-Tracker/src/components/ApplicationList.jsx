@@ -27,12 +27,12 @@ function ApplicationList({applications,
     }
 
     return(
-        <div>
+        <div >
+        <h2 className="all-applications-title">All Applications</h2> 
+         <h3 className="search-title">Search Position</h3>
+            <input  className="search-bar" type="text" placeholder="Search..." onChange={handleChange}/>
             
-            <h3>Search Position</h3>
-            <input type="text" placeholder="Search..." onChange={handleChange} />
-            
-            <select onChange={onDepartmentChange}>
+            <select className="select-bar"onChange={onDepartmentChange}>
                 <option value="All">Pick a Department</option>
                 <option value="Engineering">Engineering</option>
                 <option value="Marketing">Marketing</option>
@@ -41,35 +41,40 @@ function ApplicationList({applications,
                 <option value="Admin">Admin</option>
                 <option value="Legal">Legal</option>
             </select>
-            
-        <table className="ui celled striped padded table">
-        <tbody>
-          <tr>
-
-            <th>
-                
-              <h3 className="ui center aligned header" type="date">Date</h3>
-            </th>
-            <th>
-              <h3 className="ui center aligned header">name</h3>
-            </th>
-            <th>
-              <h3 className="ui center aligned header">position</h3>
-            </th>
-            <th>
-              <h3 className="ui center aligned header">department</h3>
-            </th>
-            <th>
-              <h3 className="ui center aligned header">status</h3>
-            </th>
-            <th>
-              <h3 className="ui center aligned header">resume</h3>
-            </th>
-          </tr>
-          {mappedApplication}
-        </tbody>
-      </table>
-      </div>
+          <div className="container"> 
+         <table className="responsive-table">
+             <tbody>
+                 <tr className="table-header">
+                    <th> 
+                    <h3 className="col col-1" type="date">Date</h3>
+                    </th>
+                    <th>
+                    <h3 className="col col-2">Name</h3>
+                    </th>
+                    <th>
+                    <h3 className="col col-3">Position</h3>
+                    </th>
+                    <th>
+                    <h3 className="col col-4">Department</h3>
+                    </th>
+                    <th>
+                    <h3 className="col col-5">Status</h3>
+                    </th>
+                    <th>
+                    <h3 className="col col-6">Resume</h3>
+                    </th>
+                    <th>
+                    <h3 className="col col-7">Edit</h3>
+                    </th>
+                    <th>
+                    <h3 className="col col-8">Delete</h3>
+                    </th>
+                 </tr>
+                 {mappedApplication}
+                </tbody>
+            </table>
+            </div> 
+        </div>
     )
 
    

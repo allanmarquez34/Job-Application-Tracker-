@@ -4,7 +4,7 @@ import Home from "./components/Home"
 import AddApplicationForm from "./components/AddApplicationForm";
 import ApplicationList from "./components/ApplicationList";
 import EditApplication from "./components/EditApplication";
-import { BrowserRouter, Switch, Route, useParams} from "react-router-dom"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
 
 
 
@@ -14,7 +14,7 @@ function App(){
     const [selectedApplication, setSelectedApplication] = useState(null)
     const [selectedDepartment, setSelectedDepartment] = useState("All");
     
-    function handleChangeForm(name, value) {
+     function handleChangeForm(name, value) {
         setSelectedApplication({
           ...selectedApplication,
           [name]: value,
@@ -29,11 +29,11 @@ function App(){
         setApplications(updatedApplications);
       }
 
-    function handleAddApplication(newApplication){
+     function handleAddApplication(newApplication){
         setApplications([...applications, newApplication])
-    }
+     }
 
-    const onApplicationDelete = (applicationId) => {
+     const onApplicationDelete = (applicationId) => {
         setApplications(applications => applications.filter(a => a.id !== applicationId))
       };
 
@@ -50,11 +50,11 @@ function App(){
         setSelectedDepartment(e.target.value)
      }
 
-    useEffect(() => {
+     useEffect(() => {
         fetch("http://localhost:3000/currentApplications")
         .then(r => r.json())
         .then(data => {
-            setApplications(data)
+        setApplications(data)
   
         })
     },[])
@@ -73,17 +73,18 @@ return(
             </Route>
 
             <Route path= "/application/add">
-                <AddApplicationForm onAddApplication={handleAddApplication}/> 
+                <AddApplicationForm 
+                    onAddApplication={handleAddApplication}/> 
             </Route>
 
             <Route path = "/applications">
                 <ApplicationList 
-                applications={itemsToDisplay}
-                onApplicationDelete={onApplicationDelete}
-                onSelectApplication={setSelectedApplication}
-                setSearchQuery={setSearchQuery}
-                onDepartmentChange={handleDepartmentChange}/>
-                
+                    applications={itemsToDisplay}
+                    onApplicationDelete={onApplicationDelete}
+                    onSelectApplication={setSelectedApplication}
+                    setSearchQuery={setSearchQuery}
+                    onDepartmentChange={handleDepartmentChange}/>
+                    
                 
             </Route>
 

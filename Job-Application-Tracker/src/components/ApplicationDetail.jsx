@@ -13,7 +13,7 @@ function ApplicationDetail(){
           .then((application) => {
             setApplication(application);
           });
-      }, [id]);re
+      }, [id]);
 
       if(!application) { return <div></div>}
 
@@ -21,7 +21,7 @@ function ApplicationDetail(){
 
       return(
         <tr>
-             <td>{date}</td>
+            <td>{date}</td>
             <td>{name}</td>
             <td>{position}</td>
             <td>{department}</td>

@@ -117,7 +117,7 @@ function AddApplicationForm({onAddApplication}){
             />
 
   
-          <button type="submit">Add Project</button>
+          <button type="submit" className="button-1">Add Project</button>
         </form>
       </section>
     )

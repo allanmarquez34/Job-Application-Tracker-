@@ -16,34 +16,36 @@ const Home = () => {
     return(
     <section>
 
-         <h2>Organize your buisness incoming job applications</h2>
-          <Link className="button" to="/applications">
-            View All Applications
-          </Link>
-
-          <h2>Most Recent Application</h2>
+         <h2 className="home-title">Organize your buisness incoming job applications</h2>
+          
         {recentApplications.map((applications) => (
-        <div key={applications.id}>
-        <h3>Date</h3>
-        {applications.date}
-        <h3>Name</h3>
-        {applications.name}
-        <h3>position</h3>
-        {applications.position}
-        <h3>Department</h3>
-        {applications.department}
-        <h3>Status</h3>
-        {applications.status}
+        <div className="form-1"key={applications.id}>
+          <h3 >Most Recent Application</h3>
+        <p>Date: {applications.date} </p>
+        
+        <p>Name: {applications.name}</p>
+        
+        <p>Position: {applications.position}</p>
+        
+        <p>Department: {applications.department}</p>
+        
+        <p>Status: {applications.status}</p>
+        
         {applications.link ? (
                 
             <p>
-              <a target="_blank" rel="noreferrer" href={applications.link}>
+              <a className="resume"target="_blank" rel="noreferrer" href={applications.link}>
                 Resume
               </a>
             </p>
             
-          ) : null} </div>
-      ))}
+          ) : null} 
+          
+          </div>
+      ))}         <Link className="home-button" to="/applications">
+      View All Applications
+    </Link>
+
     </section>
     )
 }
