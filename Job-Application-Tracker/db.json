@@ -51,7 +51,7 @@
       "name": "Jesus Quintana",
       "position": "Markerting Manager",
       "department": "Marketing",
-      "status": "Offer Sent",
+      "status": "Phone Screening",
       "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png"
     },
     {
@@ -80,15 +80,6 @@
       "status": "Phone Screening",
       "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png",
       "id": 11
-    },
-    {
-      "date": "2022-12-04",
-      "name": "Pancho Villa",
-      "position": "Marketing Manager",
-      "department": "Marketing",
-      "status": "Read",
-      "link": "https://instantresume.io/images/templates/resumes/modern/resume_modern-clean.png",
-      "id": 12
     },
     {
       "date": "2022-12-19",
@@ -197,6 +188,24 @@
       "status": "Phone Screening",
       "link": "https://marketplace.canva.com/EAFEMFgF0us/1/0/1131w/canva-minimalist-cv-resume-RHMCNdeaNZs.jpg",
       "id": 24
+    },
+    {
+      "date": "2022-12-12",
+      "name": "Doja Cat",
+      "position": "Accountant",
+      "department": "Accounting",
+      "status": "Offer Sent",
+      "link": "https://marketplace.canva.com/EAFEMFgF0us/1/0/1131w/canva-minimalist-cv-resume-RHMCNdeaNZs.jpg",
+      "id": 25
+    },
+    {
+      "date": "2022-12-04",
+      "name": "Camila",
+      "position": "Marquez",
+      "department": "Marketing",
+      "status": "Read",
+      "link": "link ",
+      "id": 26
     }
   ]
 }

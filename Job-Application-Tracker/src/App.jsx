@@ -72,11 +72,6 @@ return(
                 <Home />
             </Route>
 
-            <Route path= "/application/add">
-                <AddApplicationForm 
-                    onAddApplication={handleAddApplication}/> 
-            </Route>
-
             <Route path = "/applications">
                 <ApplicationList 
                     applications={itemsToDisplay}
@@ -88,11 +83,18 @@ return(
                 
             </Route>
 
+            <Route path= "/application/add">
+                <AddApplicationForm 
+                    onAddApplication={handleAddApplication}/> 
+            </Route>
+
+
             <Route path="/:id/edit">
                 <EditApplication
                     applications={selectedApplication}
                     onChangeForm={handleChangeForm}
                     onEditApplication={handleEditApplication}
+                    
                         />
 
 

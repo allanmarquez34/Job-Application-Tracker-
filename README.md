@@ -13,3 +13,4 @@ Applications in the list show the applicants details including date, name, posit
 Add application page shows a form to add an application to the list. detials to input includ date, name, position, department, status, and resume link. once you hit the submit button it redirects you to the application list. 
 
 
+
